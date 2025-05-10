@@ -47,8 +47,8 @@
 
     <div class="content">
     <h2>Hi There,<br/> I'm Aria <span>Devitra</span></h2>
-    <!-- <p>i am into <span class="typing-text"></span></p> -->
-    <p>i am into <span >Full-Stack Developer</span></p>
+    <p>i am into <span class="typing-text"></span></p>
+    <!-- <p>i am into <span >Full-Stack Developer</span></p> -->
     <a href="#about" class="btn"><span>About Me</span>
       <i class="fas fa-arrow-circle-down"></i>
     </a>
@@ -70,269 +70,550 @@
 
 <!-- about section starts -->
 <section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    
-    <div class="row">
+  <h2 class="heading">
+    <i class="fas fa-user-alt"></i> About <span>Me</span>
+  </h2>
 
+  <div class="row">
+    <!-- Bagian Gambar -->
     <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/arya.png" alt="">
+      <img draggable="false" class="tilt" src="./assets/images/arya.png" alt="Foto Aria" />
     </div>
-    <div class="content">
-        <h3>I'm Aria</h3>
-        <span class="tag">Full Stack Developer</span>
-        
-        <p>Saya seorang Full-Stack Developer yang tinggal di Bogor, Indonesia.
-          Saya lulusan Smk Wikrama 1 Garut jurusan Rekayasa Perangkat Lunak.
-          Saya sangat bersemangat untuk meningkatkan keterampilan coding saya & mengembangkan aplikasi & situs web.
-          Saya membuat WebApps dan Situs Web menggunakan Laravel.
-          Saya bekerja sendiri untuk meningkatkan keterampilan saya.
-          Saya senang membuat mockup Full-Stack.</p>
-        <div class="box-container">
-            <!-- <div class="box">
-              <p><span> age: </span> 20</p>
-              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
-            </div> -->
-            <div class="box">
-              <p><span> email : </span> aryadevitra23@gmail.com</p>
-              <p><span> place : </span> Bogor, Indonesia - (+62) 895-1641-8827</p>
-            </div>
-        </div>
-        
-        <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1rZiXl562q7aVyk1kJ2nO85YBAq8ixTiw/view" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
 
+    <!-- Bagian Konten -->
+    <div class="content">
+      <h3>I'm Aria</h3>
+      <span class="tag">Full Stack Developer</span>
+
+      <p>
+        Saya seorang Full-Stack Developer yang tinggal di Bogor, Indonesia.
+        Saya lulusan SMK Wikrama 1 Garut jurusan Rekayasa Perangkat Lunak.
+        Saya sangat bersemangat untuk meningkatkan keterampilan coding saya & mengembangkan aplikasi & situs web.
+        Saya membuat WebApps dan Situs Web menggunakan Laravel.
+        Saya bekerja sendiri untuk meningkatkan keterampilan saya.
+        Saya senang membuat mockup Full-Stack.
+      </p>
+
+      <!-- Info Kontak -->
+      
+        
+          <p><span>Email :</span> aryadevitra23@gmail.com</p>
+          <p><span>Tempat :</span> Bogor, Indonesia - (+62) 895-1641-8827</p>
+        
+
+      <!-- Tombol Resume -->
+      <div class="resumebtn">
+        <a href="https://drive.google.com/file/d/1qrP_EG8BVCLMSr7RAh1DbHqUW2id_FP6/view" target="_blank" class="btn">
+          <span>Resume</span>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
     </div>
-    </div>
+  </div>
 </section>
+
 <!-- about section ends -->
 
 <!-- skills section starts -->
-<section class="skills" id="skills">
-
+<!-- Tambahkan di dalam <head> -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .skills {
+      padding: 40px 15px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+  
+    .skills .heading {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #333;
+    }
+  
+    .skills .heading span {
+      color: #007BFF;
+    }
+  
+    .skills_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .skill-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 120px;
+      padding: 15px 10px;
+    }
+  
+    .skill-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  
+    .skill-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
+    }
+  
+    .skill-item:hover img {
+      transform: scale(1.1) rotate(5deg);
+    }
+  
+    .skill-item h4 {
+      font-size: 0.85rem;
+      margin-top: 5px;
+      color: #444;
+    }
+  
+    @media (max-width: 768px) {
+      .skill-item {
+        width: 30%;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .skill-item {
+        width: 45%;
+      }
+    }
+  </style>
+  
+  
+  <!-- Tambahkan di bagian akhir <body> -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+  
+  <!-- SECTION -->
+  <section class="skills" id="skills">
     <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
-
     <div class="container">
-      <div class="heading_container heading_center" data-aos="fade-down">
-      </div>
       <div class="row skills_container">
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/laravel.png" alt="Laravel" />
-            <pre></pre>
-            <h4>Laravel</h4>
-          </div>
+        <!-- Gunakan loop (Laravel/Blade) jika data dinamis -->
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/laravel.png" alt="Laravel">
+          <h4>Laravel</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/go.png" alt="Go Language" />
-            <pre></pre>
-            <h4>GoLang</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/go.png" alt="GoLang">
+          <h4>GoLang</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/php.png" alt="PHP" />
-            <pre></pre>
-            <h4>PHP</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/php.png" alt="PHP">
+          <h4>PHP</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/phpmyadmin.png" alt="Php MyAdmin" />
-            <pre></pre>
-            <h4>Php MyAdmin</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/phpmyadmin.png" alt="PhpMyAdmin">
+          <h4>PhpMyAdmin</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/html.png" alt="HTML" />
-            <pre></pre>
-            <h4>HTML</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/html.png" alt="HTML">
+          <h4>HTML</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/css.png" alt="CSS" />
-            <pre></pre>
-            <h4>CSS</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/css.png" alt="CSS">
+          <h4>CSS</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/js.png" alt="JavaScript" />
-            <pre></pre>
-            <h4>JavaScript</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/js.png" alt="JavaScript">
+          <h4>JavaScript</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/j query.png" alt="JQuery" />
-            <pre></pre>
-            <h4>J Query</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/TailwindCSS.png" alt="Tailwind">
+          <h4>Tailwind</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/bootstrap.png" alt="Bootstrap" />
-            <pre></pre>
-            <h4>Bootstrap</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/j query.png" alt="jQuery">
+          <h4>jQuery</h4>
         </div>
-        <div class="col-md-3 col-sm-6 col-6 skill-item" data-aos="zoom-in">
-          <div class="info">
-            <img src="./assets/images/skills/corel.png" alt="CorelDraw" />
-            <pre></pre>
-            <h4>CorelDraw</h4>
-          </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/bootstrap.png" alt="Bootstrap">
+          <h4>Bootstrap</h4>
         </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/corel.png" alt="CorelDraw">
+          <h4>CorelDraw</h4>
+        </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/python.png" alt="Python">
+          <h4>Python</h4>
+        </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/1.png" alt="React JS">
+          <h4>React JS</h4>
+        </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/2.png" alt="Node JS">
+          <h4>Node JS</h4>
+        </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/3.png" alt="Laragon">
+          <h4>Laragon</h4>
+        </div>
+        <div class="skill-item" data-aos="zoom-in">
+          <img src="./assets/images/skills/4.png" alt="Canva">
+          <h4>Canva</h4>
+        </div>
+      
+        
       </div>
     </div>
-    
-
-</section>
+  </section>
+  
 <!-- skills section ends -->
 
 
 <!-- education section starts -->
-<section class="education" id="education">
 
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i> <span>Education</span></h1>
   
-  <!-- <p class="qoute">Pendidikan bukanlah pembelajaran fakta, tetapi pelatihan pikiran untuk berpikir.</p> -->
-  <pre></pre>
+<section class="education" id="education">
+  <h1 class="heading" data-aos="fade-down">
+    <i class="fas fa-graduation-cap"></i> <span>Education</span>
+  </h1>
+
   <div class="box-container">
-  
-  <div class="box">
-  <div class="image">
-  <img draggable="false" src="./assets/images/educat/wikrama.png" alt="">
+    <div class="box" data-aos="zoom-in" data-aos-delay="100">
+      <div class="image">
+        <img src="./assets/images/educat/wikrama.png" alt="SMK Wikrama 1 Garut" draggable="false">
+      </div>
+      <div class="content">
+        <h3>SMK Wikrama 1 Garut</h3>
+        <p>Rekayasa Perangkat Lunak | Garut</p>
+        <h4>2021 - 2023</h4>
+      </div>
+    </div>
   </div>
-  <div class="content">
-  <h3>Smk Wikrama 1 Garut</h3>
-  <p>Rekayasa Perangkat Lunak | Garut</p>
-  <h4>2021-2023 </h4>
-  </div>
-  </div>
+</section>
+
+
+<style>
+  section.education {
+    padding: 8rem 2rem;
+    background: linear-gradient(145deg, #f0f4f8, #e0ecf1);
+    text-align: center;
+  }
+  
+  .education .heading {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+    color: #1e2a38;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  
+  .education .heading i {
+    color: #2980b9;
+    margin-right: 1rem;
+    font-size: 3rem;
+  }
+  
+  .education .heading span {
+    color: #e74c3c;
+  }
+  
+  .education .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .education .box {
+    background: #ffffffcc;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .education .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+  
+  .education .box .image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .education .box .content {
+    padding: 2.5rem 2rem;
+  }
+  
+  .education .box .content h3 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .education .box .content p {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .education .box .content h4 {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 400;
+  }
+  
+</style>
+
+<!-- Tambahkan sebelum </body> -->
+
   
   
   
-  </div>
-  </section>
 <!-- education section ends -->
 
 
 <!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
-
-  <div class="box-container">
-
-    <div class="box tilt">
-     <img src="./assets/images/projects/gooritaa.png" alt="" />
-     <div class="content">
-       <div class="tag">
-       <h3>Goorita Erp</h3>
-       </div>
-       <div class="desc">
-        <p class align="center">Nama proyek ini adalah <strong>Goorita ERP</strong>. Saya membuat proyek E-commerce untuk <strong>Penjualan Makanan Impor dan Ekspor.</strong>...</p>
-         <div class="btns">
-           <a href="https://goorita.com" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div>
-       </div>
-     </div>
-   </div> 
-    <div class="box tilt">
-     <img src="./assets/images/projects/tigadigit.png" alt="" />
-     <div class="content">
-       <div class="tag">
-       <h3>Tigadigit</h3>
-       </div>
-       <div class="desc">
-        <p><strong>Tigadigit</strong> adalah Aplikasi Akuntansi dengan dasbor keuangan, wawasan waktu nyata, dan penanganan transaksi serta laporan otomatis untuk para profesional dan bisnis.</p>
-         <div class="btns">
-           <a href="https://tigadigit.id" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div>
-       </div>
-     </div>
-   </div> 
-    <div class="box tilt">
-     <img src="./assets/images/projects/iziloh.png" alt="" />
-     <div class="content">
-       <div class="tag">
-       <h3>Iziloh</h3>
-       </div>
-       <div class="desc">
-        <p class="text-center"><strong>Iziloh</strong> adalah platform laundry sesuai permintaan yang memungkinkan pelanggan memesan layanan laundry , setrika, serta penjemputan & pengiriman dengan mudah melalui aplikasi.</p>
-         <div class="btns">
-           <a href="https://iziloh.id" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div>
-       </div>
-     </div>
-   </div> 
-    <div class="box tilt">
-     <img src="./assets/images/projects/adminin.png" alt="" />
-     <div class="content">
-       <div class="tag">
-         <h3>Adminin</h3>
+  
+  <section class="work" id="work">
+    <h2 class="heading" data-aos="fade-up"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+  
+    <div class="box-container">
+      
+      <div class="box" data-aos="fade-up">
+        <img src="./assets/images/projects/gooritaa.png" alt="Goorita ERP" />
+        <div class="content">
+          <div class="tag">
+            <h3>Goorita ERP</h3>
+          </div>
+          <div class="desc">
+            <p align="center">Nama proyek ini adalah <strong>Goorita ERP</strong>. Saya membuat proyek E-commerce untuk <strong>Penjualan Makanan Impor dan Ekspor.</strong></p>
+            <div class="btns">
+              <a href="https://goorita.com" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
         </div>
-        <div class="desc">
-          <p class="text-center">Proyek ini, <strong>Adminin</strong>, adalah aplikasi kasir untuk mengelola penjualan dan transaksi dalam bisnis ritel.</p>         
-         <!-- <div class="btns">
-           <a href="https://www.google.com" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div> -->
-       </div>
-     </div>
-   </div> 
-    <div class="box tilt">
-     <img src="./assets/images/projects/mitra.png" alt="" />
-     <div class="content">
-       <div class="tag">
-       <h3>Ecommerce</h3>
-       </div>
-       <div class="desc">
-         <p class="text-center">Proyek ini, <strong></strong> adalah aplikasi Ecommerce yang menjual berbagai kebutuhan Reklame</p>       
-                 <div class="btns">
-           <a href="https://mitrareklamebogor.com" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div>
-       </div>
-     </div>
-   </div> 
-    <div class="box tilt">
-     <img src="./assets/images/projects/qurban.png" alt="" />
-     <div class="content">
-       <div class="tag">
-       <h3>Web penjualan Hewan Qurban</h3>
-       </div>
-       <div class="desc">
-<p>Web promosi adalah sebuah platform website yang menjual Hewan Qurban dan Aqiqah</p>         
-<div class="btns"> 
- <a href="https://qurbanberkahbersama.com" class="btn" target="_blank">
-             <i class="fas fa-eye"></i> View
-           </a>            
-         </div>
-       </div>
-     </div>
-   </div> 
+      </div>
+  
+      <div class="box" data-aos="fade-up" data-aos-delay="100">
+        <img src="./assets/images/projects/tigadigit.png" alt="Tigadigit" />
+        <div class="content">
+          <div class="tag">
+            <h3>Tigadigit</h3>
+          </div>
+          <div class="desc">
+            <p><strong>Tigadigit</strong> adalah Aplikasi Akuntansi dengan dasbor keuangan, wawasan waktu nyata, dan laporan otomatis untuk profesional & bisnis.</p>
+            <div class="btns">
+              <a href="https://tigadigit.id" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="box" data-aos="fade-up" data-aos-delay="200">
+        <img src="./assets/images/projects/iziloh.png" alt="Iziloh" />
+        <div class="content">
+          <div class="tag">
+            <h3>Iziloh</h3>
+          </div>
+          <div class="desc">
+            <p class="text-center"><strong>Iziloh</strong> adalah platform laundry sesuai permintaan untuk layanan laundry, setrika, dan antar jemput.</p>
+            <div class="btns">
+              <a href="https://iziloh.id" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="box" data-aos="fade-up" data-aos-delay="300">
+        <img src="./assets/images/projects/adminin.png" alt="Adminin" />
+        <div class="content">
+          <div class="tag">
+            <h3>Adminin</h3>
+          </div>
+          <div class="desc">
+            <p class="text-center">Proyek <strong>Adminin</strong> adalah aplikasi kasir untuk mengelola penjualan dan transaksi dalam bisnis ritel.</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="box" data-aos="fade-up" data-aos-delay="400">
+        <img src="./assets/images/projects/mitra.png" alt="Mitra Reklame" />
+        <div class="content">
+          <div class="tag">
+            <h3>Ecommerce</h3>
+          </div>
+          <div class="desc">
+            <p class="text-center">Proyek ini adalah aplikasi Ecommerce yang menjual berbagai kebutuhan Reklame.</p>
+            <div class="btns">
+              <a href="https://mitrareklamebogor.com" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="box" data-aos="fade-up" data-aos-delay="500">
+        <img src="./assets/images/projects/qurban.png" alt="Qurban" />
+        <div class="content">
+          <div class="tag">
+            <h3>Web Penjualan Hewan Qurban</h3>
+          </div>
+          <div class="desc">
+            <p>Web promosi untuk menjual Hewan Qurban dan Aqiqah secara online.</p>
+            <div class="btns">
+              <a href="https://qurbanberkahbersama.com" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-</section>
+      <div class="box" data-aos="fade-up" data-aos-delay="500">
+        <img src="./assets/images/projects/pos.png" alt="Point OF Sales" />
+        <div class="content">
+          <div class="tag">
+            <h3>Point Of Sale</h3>
+          </div>
+          <div class="desc">
+            <p></p>
+            <div class="btns">
+              <a href="" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+
+    <style>
+      section.work {
+        padding: 3rem 1rem 5rem;
+        background-color: #f9f9f9;
+        overflow-x: hidden;
+      }
+    
+      .work .heading {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+    
+      .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    
+      .box {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex: 1 1 calc(25% - 2rem);
+        max-width: calc(25% - 2rem);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+    
+      .box:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+    
+      .box img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+    
+      .tag h3 {
+        margin: 1rem 0 0.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #222;
+      }
+    
+      .desc {
+        padding: 0 1rem 1rem;
+        font-size: 0.95rem;
+        color: #555;
+      }
+    
+      .desc p {
+        margin-bottom: 0.8rem;
+      }
+    
+      .btns {
+        text-align: center;
+      }
+    
+      .btn {
+        background: #3498db;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+    
+      .btn:hover {
+        background: #2c80b4;
+      }
+    
+      /* Tablet */
+      @media (max-width: 992px) {
+        .box {
+          flex: 1 1 calc(45% - 2rem);
+          max-width: calc(45% - 2rem);
+        }
+      }
+    
+      /* Mobile */
+      @media (max-width: 768px) {
+        .box {
+          flex: 1 1 100%;
+          max-width: 90%;
+        }
+    
+        .work .heading {
+          font-size: 2rem;
+        }
+      }
+    </style>
+    
+
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+  </section>
+  
+  <!-- Inisialisasi AOS -->
+  
+  
 <!-- work project section ends -->
 
 <!-- experience section starts -->
 <section class="experience" id="experience">
-
   <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
 
   <div class="timeline">
@@ -343,111 +624,318 @@
           <h2>PT. Robust Creative Media</h2>
         </div>
         <div class="desc">
-            <h3>Full Stack Developer | Internship</h3>
-            <p>june - Desember 2023</p>
+          <h3>Full Stack Developer | Internship</h3>
+          <p>Juni - Desember 2023</p>
         </div>
       </div>
     </div>
-
-    <div class="container right">
-        <div class="content">
-          <div class="tag">
-            <h2>PT. Aktiva Multi Inovasi</h2>
-          </div>
-          <div class="desc">
-              <h3>Full Stack Developer | Internship</h3>
-              <p>23 November - 22 Desember</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container left">
-        <div class="content">
-          <div class="tag">
-            <h2>PT. Hayatan Thayyibah </h2>
-          </div>
-          <div class="desc">
-              <h3>Web Development & SEO | Freelance</h3>
-              <p>June 2024  </p>
-          </div>
-        </div>
-      </div>
 
     <div class="container right">
       <div class="content">
         <div class="tag">
-          <h2>Mitra Reklame </h2>
+          <h2>PT. Aktiva Multi Inovasi</h2>
         </div>
         <div class="desc">
-            <h3>Web Development & SEO | Freelance</h3>
-            <p>September 2024 </p>
+          <h3>Full Stack Developer | Internship</h3>
+          <p>23 November - 22 Desember 2023</p>
         </div>
       </div>
     </div>
 
-    
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>PT. Hayatan Thayyibah</h2>
+        </div>
+        <div class="desc">
+          <h3>Web Development & SEO | Freelance</h3>
+          <p>Juni 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Mitra Reklame</h2>
+        </div>
+        <div class="desc">
+          <h3>Web Development & SEO | Freelance</h3>
+          <p>September 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>PT. Sinergi Inovasi Techno</h2>
+        </div>
+        <div class="desc">
+          <h3>Fullstack Developer | WFA</h3>
+          <p>Desember 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Lokpro</h2>
+        </div>
+        <div class="desc">
+          <h3>Fullstack Developer | Freelance</h3>
+          <p>Februari 2025</p>
+        </div>
+      </div>
+    </div>
 
   </div>
-
-
-</div>
-
 </section>
+
+<style>
+  .experience {
+    padding: 50px 20px;
+    background: #f9f9f9;
+  }
+  
+  .experience .heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #00bcd4;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  .container {
+    padding: 20px 30px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  .container.left {
+    left: 0;
+  }
+  
+  .container.right {
+    left: 50%;
+  }
+  
+  .content {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease forwards;
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  
+  .container.left .content {
+    margin-left: auto;
+  }
+  
+  .container.right .content {
+    margin-right: auto;
+  }
+  
+  .tag h2 {
+    color: #00bcd4;
+    margin: 0 0 10px;
+  }
+  
+  .desc h3 {
+    margin: 0 0 5px;
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  .desc p {
+    margin: 0;
+    color: #777;
+    font-size: 0.95rem;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .timeline::after {
+      left: 31px;
+    }
+  
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .container.right {
+      left: 0%;
+    }
+  }
+  
+</style>
 <!-- experience section ends -->
 
 <!-- contact section starts -->
 <!-- Certificate -->
-<!-- <section class="certificate-gallery" id="certificate-gallery">
-  <h2 class="heading"><i class="fas fa-award"></i> Our <span>Certificates</span></h2>
-  <div class="timeline">
-  <div class="box tilt">
-    <img src="./assets/images/sertifikat/js freecodecamp.png" alt="" style="height: auto; width:300px" />
-    <div class="content">
-      <div class="tag">
-      <h2>Sertifikat Java Script Freecodecamp</h2>
-      </div>
-      <div class="desc">
+<!-- Sertifikat Section -->
 
-      </div>
-    </div>
-  </div> 
-  <div class="box tilt">
-    <img src="./assets/images/sertifikat/responsive freecodecamp.png" alt="" style="height: auto; width:300px" />
-    <div class="content">
-      <div class="tag">
-        <h2>Sertifikat Responsive Web Freecodecamp</h2>
-      </div>
-      <div class="desc">
-
-      </div>
-    </div>
-  </div> 
-  <div class="box tilt">
-    <img src="./assets/images/sertifikat/aktiva.png" alt="" style="height: auto; width:300px" />
-    <div class="content">
-      <div class="tag">
-        <h2>Sertifikat Magang PT.Aktiva Multi Inovasi</h2>
-      </div>
-      <div class="desc">
-
-      </div>
-    </div>
-  </div> 
-  <div class align="center-box tilt">
-    <img src="./assets/images/sertifikat/aktiva.png" alt="" style="height: auto; width:300px"/>
-    <div class="content">
-      <div class="tag">
-        <h2>Sertifikat Magang PT.Aktiva Multi Inovasi</h2>
-      </div>
-      <div class="desc">
-
-      </div>
-    </div>
-  </div> 
+<section class="certificate-gallery" id="certificate-gallery">
+  <h2 class="heading">
+    <i class="fas fa-award"></i> Our <span>Certificates</span>
+  </h2>
   
+  <div class="scroll-wrapper">
+    <div class="scroll-container">
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/js freecodecamp.png')">
+        <img src="./assets/images/sertifikat/js freecodecamp.png" alt="Sertifikat JS" />
+      </div>
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/responsive freecodecamp.png')">
+        <img src="./assets/images/sertifikat/responsive freecodecamp.png" alt="Sertifikat Responsive" />
+      </div>
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/aktiva.png')">
+        <img src="./assets/images/sertifikat/aktiva.png" alt="Sertifikat Aktiva" />
+      </div>
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/aktiva.png')">
+        <img src="./assets/images/sertifikat/it.png" alt="Sertifikat Aktiva 2" />
+      </div>
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/aktiva.png')">
+        <img src="./assets/images/sertifikat/learn.png" alt="Sertifikat Aktiva 2" />
+      </div>
+      <div class="box tilt" onclick="openModal('./assets/images/sertifikat/aktiva.png')">
+        <img src="./assets/images/sertifikat/ujikom.png" alt="Sertifikat Aktiva 2" />
+      </div>
+     
+    </div>
   </div>
-  
-</section> -->
+
+  <!-- Modal Tampilan Besar -->
+  <div class="modal" id="imageModal" onclick="closeModal()">
+    <img id="modalImage" src="" alt="Fullscreen Certificate" />
+  </div>
+
+  <style>
+    .certificate-gallery {
+      padding: 40px 20px;
+      background: #f7f9fc;
+      text-align: center;
+    }
+
+    .heading {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .heading span {
+      color: #007BFF;
+    }
+
+    .scroll-wrapper {
+      display: flex;
+      justify-content: center;
+      overflow-x: auto;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      scroll-snap-type: x mandatory;
+      justify-content: center;
+    }
+
+    .box {
+      flex: 0 0 auto;
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    .box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Modal Fullscreen */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      animation: slideIn 1s forwards;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <script>
+    function openModal(imageSrc) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = imageSrc;
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+  </script>
+</section>
+
+
 
 
 
@@ -458,45 +946,58 @@
 
 <!-- footer section starts -->
 <section class="footer">
-
   <div class="box-container">
 
     <div class="box">
       <h3>Aria Portfolio</h3>
-      <p>Thank you for visiting my personal portfolio website. Connect with me through social media. <br/> <br/> Keep Up the Good Work 🚀. Connect with me through live chat!</p>
-      </div>
+      <p>
+        Thank you for visiting my personal portfolio website.<br />
+        Connect with me through social media and live chat. <br /><br />
+        Keep Up the Good Work 🚀
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>Quick Links</h3>
+      <a href="#home"><i class="fas fa-chevron-circle-right"></i> Home</a>
+      <a href="#about"><i class="fas fa-chevron-circle-right"></i> About</a>
+      <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
+      <a href="#education"><i class="fas fa-chevron-circle-right"></i> Education</a>
+      <a href="#work"><i class="fas fa-chevron-circle-right"></i> Work</a>
+      <a href="#experience"><i class="fas fa-chevron-circle-right"></i> Experience</a>
+    </div>
+
+    <div class="box">
+      <h3>Contact Info</h3>
+      <p><i class="fas fa-phone"></i> (+62) 895-1641-8827</p>
+      <p><i class="fas fa-envelope"></i> aryadevitra23@gmail.com</p>
+      <p><i class="fas fa-map-marked-alt"></i> Bogor, Indonesia</p>
       
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
+      <div class="share">
+        <a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/arya-devitra-3506b2259/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a class="github" aria-label="GitHub" href="https://github.com/Galaxy-31" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="gitlab" aria-label="Gitlab" href="https://gitlab.com/Galaxy-31" target="_blank">
+          <i class="fab fa-gitlab"></i>
+        </a>
+        <a class="instagram" aria-label="Instagram" href="https://www.instagram.com/arya_devitra/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
       </div>
+    </div>
 
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>(+62) 895-1641-8827</p>
-          <p> <i class="fas fa-envelope"></i>aryadevitra23@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Bogor, Indonesia</p>
-          <div class="share">
-
-            <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/arya-devitra-3506b2259/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-            <li><a class="github" aria-label="GitHub" href="https://github.com/Galaxy-31" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a class="gitlab" aria-label="Gitlab" href="https://gitlab.com/Galaxy-31" target="_blank"><i class="fab fa-gitlab"></i></a></li>
-            <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/arya_devitra/"><i class="fab fa-instagram" target="_blank"></i></a></li>
-          </div>
-      </div>
   </div>
 
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/arya-devitra-3506b2259/"> Aria Devitra</a></h1>
-
+  <h1 class="credit">
+    Designed with <i class="fa fa-heart pulse"></i> by 
+    <a href="https://www.linkedin.com/in/arya-devitra-3506b2259/" target="_blank">Aria Devitra</a>
+  </h1>
 </section>
+
 <!-- footer section ends -->
-
-
 <!-- scroll top btn -->
 <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
 <!-- scroll back to top -->
